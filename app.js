@@ -16,3 +16,12 @@ app.get('/', function(request, response){
 })
 
 app.listen(8080)
+
+
+app.get('/', function(request, response){
+  response.render("index.hbs")
+})
+
+app.get('/about', function(request, response){
+  response.render("../about.hbs")
+})
