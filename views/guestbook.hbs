@@ -1,0 +1,42 @@
+<section id=guestook>
+    <div class="guest-image">
+        <img src="/images/sticky-note-681016.jpg" class="contact-image" alt="guestbook image">
+    </div>
+    <div class="contact-form">
+        <form method="post" action="/guestbook">
+            <h2>Guestbook posts</h2>
+            <div class="contact-box">
+                <input type="text" name="title" required="required" placeholder="Full name">
+            </div>
+            <div class="contact-box">
+                <textarea required="required" name="content" placeholder="Message" rows="3"></textarea>
+            </div>
+            <div class="contact-box">
+                <input type="submit" name="" value="Send">
+            </div>
+        </form>
+    </div>
+    </div>
+</section>
+
+<h1>Welcome to my guestbook page.</h1>
+<h2>Guestbook</h2>
+{{#if guestbooks.length}}
+    {{#each guestbooks}}
+    <div class="my-post">
+        <h3>#{{id}} {{title}}</h3>
+        <p>{{content}}</p>
+      <form method="post" action="">
+        <input type="submit" class="btn btn-success" value="Details">
+      </form> 
+        {{#if ../isLoggedIn}}
+        <a href="/updateguestbookposts/{{id}}" class="btn btn-primary">Update</a>
+      <form method="post" action="/deletegpost/{{id}}">
+        <input type="submit" class="btn btn-primary" value="Delete post">  
+      </form>   
+      {{/if}}
+    </div>
+    {{/each}}
+{{else}}
+<p>There is no guestbook posts</p>
+{{/if}}

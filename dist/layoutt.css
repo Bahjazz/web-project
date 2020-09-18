@@ -1,0 +1,305 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1;
+  background-color: white;
+}
+/* CONATINER that holds all the classes*/
+.Container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.my-post{
+    width: 30%;
+    height: auto;
+    background-color: burlywood ;
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+/*header*/
+header {
+  background: black;
+  color: white;
+  padding-top: 30px;
+  min-height: 80px;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+header ul {
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 15px 0 15px;
+}
+header #logo {
+  float: left;
+  padding: 30px;
+}
+header #logo a {
+  margin: 0;
+}
+header #logo h1 {
+  margin: 0;
+}
+header nav {
+  float: right;
+  margin-top: 30px;
+}
+header a:hover {
+  color: white;
+  font-weight: bolder;
+}
+/*background-info*/
+#background-info {
+  min-height: 500px;
+  background-image: url("/images/pen-4337521.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white;
+}
+#background-info h1 {
+  font-size: 50px;
+  margin-top: 15%;
+  margin-left: 15%;
+}
+.mywork {
+  text-align: center;
+  margin-left: 10%;
+  font-size: 19px;
+}
+/*experience*/
+#experience {
+  background: black;
+  padding: 20px;
+}
+
+#experience h1 {
+  float: left;
+  padding-left: 20%;
+}
+#Experience-boxes {
+  margin-top: 55px;
+}
+#Experience-boxes.box {
+  width: 40%;
+}
+
+/*about page*/
+.about-Container {
+  max-width: 1100px;
+  padding: 03rem;
+  margin-top: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  color: black;
+}
+
+.about-Container h1 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+.about-Container h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: black;
+}
+.about-Container .image {
+  float: left;
+  margin-bottom: 20px;
+}
+.about-Container p {
+  font-size: 30px;
+  color: black;
+  margin-bottom: 2px;
+  line-height: 2rem;
+}
+@media (max-width: 768px) {
+  .about-Container {
+    padding: 40px;
+    width: 100%;
+  }
+  .about-Container .image {
+    width: 100%;
+  }
+  .about-Container p {
+    width: 100%;
+    padding: 40px;
+  }
+  .about-Container h1,
+  .about-Container h2 {
+    padding: 40px;
+  }
+}
+
+/*contact page */
+.Content-info {
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  background: url("/images/macbook-336704.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.Content-info .Cont-info {
+  text-align: center;
+  max-width: 700px;
+}
+.Content-info .Cont-info h1 {
+  font-size: 40px;
+  color: black;
+  font-weight: 600;
+}
+.Con-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+.contact-me-info {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.contact-me-info.Con-box {
+  display: flex;
+  padding: 20px 0;
+  position: relative;
+}
+.contact-me-info .Con-box.text {
+  color: black;
+  display: flex;
+  font-size: 40px;
+  margin-left: 25px;
+  font-weight: 200;
+  flex-direction: column;
+}
+.contact-me-info .Con-box .text h3 {
+  color: black;
+  font-weight: 400;
+}
+.contact-me-info .Con-box .text p {
+  color: black;
+  font-size: 17px;
+  padding-bottom: 30px;
+}
+.contact-form {
+  width: 100%;
+  padding: 40px;
+  background: gray;
+}
+.contact-form h2 {
+  color: black;
+  font-size: 30px;
+}
+.contact-form .contact-box {
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+  color: black;
+  font-size: 15px;
+}
+.contact-form .contact-box .input {
+  font-size: 15px;
+  padding: 3px 0;
+  margin: 10px 0;
+  width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  color: black;
+}
+.contact-form .contact-box .textarea {
+  font-size: 15px;
+  padding: 3px 0;
+  resize: none;
+  margin: 10px 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  color: black;
+}
+.contact-form .contact-box input[type="submit"] {
+  color: green;
+  width: 100px;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+}
+
+.contact-image{
+    width: 100%;
+    height: 100%;
+}
+.guest-image {
+    height: 500px;
+}
+
+/*contact*/
+@media (max-width: 991px) {
+  .Content-info {
+    padding: 50px;
+  }
+  .Con-container {
+    flex-direction: column;
+  }
+  .Con-container.contact-me-info {
+    margin-bottom: 40px;
+  }
+
+  .Con-container.contact-me-info {
+    width: 100;
+  }
+  .contact-form {
+    width: 100%;
+  }
+}
+/*guestbook*/
+.guest-image {
+    float: left;}
+footer {
+  margin-top: auto;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+/*home*/
+@media (max-width: 768px) {
+  header #logo,
+  header nav,
+  header nav li,
+  #background-info h1,
+  #Experience-boxes.box {
+    text-align: center;
+    width: 100%;
+    float: none;
+  }
+  header {
+    padding-bottom: 15px;
+  }
+  #background-info h1 {
+    margin-top: 30px;
+  }
+}

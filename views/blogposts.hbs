@@ -1,0 +1,21 @@
+<h1>Welcome to my blog posts.</h1>
+<h2>Blogposts</h2>
+{{#if blogs.length}}
+    {{#each blogs}}
+    <div class="my-post">
+        <h3>#{{id}} {{title}}</h3>
+        <p>{{content}}</p>
+             <form method="post" action="">
+        <input type="submit" class="btn btn-success" value="Details">
+      </form> 
+        {{#if ../isLoggedIn}}
+      <a href="/updateblogpost/{{id}}" class="btn btn-primary">Update</a>
+      <form method="post" action="/deletepost/{{id}}">
+        <input type="submit" class="btn btn-primary" value="Delete post">  
+      </form>   
+      {{/if}}
+    </div>
+    {{/each}}
+{{else}}
+<p>There is no blogpost</p>
+{{/if}}

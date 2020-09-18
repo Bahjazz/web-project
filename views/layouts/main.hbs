@@ -1,46 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/dist/layout.css">
-    <link rel="stylesheet" href="../Spectre.css">
-    <title>Bahjaz Website</title>
-  
-</head>
-<body>
-<div class ="box-container">
- <div class="box1">
-   <div>
-    <a href="/Index.html" class="btn btn-link"><span>Bahja Faqid</span></a>
-   </div>
- </div>
- 
- <header class="navbar">
-  <section class="navbar-section">
-  </section>
-  <section class="navbar-center">
-    <!-- centered logo or brand -->
-  </section>
-  <section class="navbar-section">
-    <a href="about.html" class="btn btn-link">About</a>
-    <a href="#" class="btn btn-link">Experience</a>
-    <a href="#" class="btn btn-link">Contact</a>
-    <a href="#" class="btn btn-link">Guestbook</a>
-  </section>
-</header>  
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="/dist/layoutt.css">
 
- <div class="box3">
-   <div class="content">
-    <h1>Hi, My Name is Bahja</h1>
-         <a href="about.html" type="button" class="mywork">see my work</a>
+    <title>Hello</title>
+  </head>
+  <body>
+    
+<body>
+    <!--My name as logo on left side and navigation menue on the right-->
+  <header>
+   <div class="Container">
+       <div id="logo">
+          <a href="/home"><h1>Bahja Faqid</h1></a>
+       </div>
+       <nav>
+           <ul>
+               <li><a href="/home">Home</a></li>
+               <li><a href ="/about">About</a></li>
+               <li><a href="/contact">Contact</a></li>
+               <li><a href="/blogposts">Blogposts</a></li>
+               <li><a href="/guestbook">Guestbook</a></li>
+               {{#if isLoggedIn}}
+               <li><a href="/admin">Admin</a></li>
+               {{/if}}
+           </ul>
+       </nav>
    </div>
- 
-  </div>
- </div>
-</div>
-  </body>
+   </header>
+   <!--a ful image with some text on -->
+  <main>
+    {{{body}}}
+</main>
+
+  
   <footer>
-    <a href="#" class="btn btn-link">Login</a>
-  </footer>
-  </html>
+  <a href="/login" class="btn btn-link">Login</a>
+  <p>Bahja faqid, copyright &copy; 2020</p>
+
+</footer>
+</body>   
+</html>
