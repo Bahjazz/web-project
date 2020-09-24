@@ -3,9 +3,35 @@ const expressHandlebars = require('express-handlebars')
 var path=require("path")
 const app = express()
 const bodyParser = require('body-parser')
+const sqlite3 = require('sqlite3')
+const  correctUsername = "Bahjazz"
+const correctPasword ="bahja12"
+const db = new sqlite3.Database("my-database.db")
+
+db.run(`
+   CREATE TABLE IF NOT EXISTS guestbook(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    content TEXT
+   )
+  `)
+  db.run(`
+  CREATE TABLE IF NOT EXISTS blogpost(
+   Id INTEGER PRIMARY KEY AUTOINCREMENT,
+   title TEXT,
+   content TEXT
+  )
+ `)
+ db.run(`
+   CREATE TABLE IF NOT EXISTS Admin(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    content TEXT
+   )
+  `)
 
 
-app.use(bodyParser.urlencoded({
+  app.use(bodyParser.urlencoded({
   extended: false
 }))
 
@@ -22,7 +48,7 @@ const blogs = [{
 const guestbooks = [{
   id: 0,
   title: "Bahja",
-  content: "I like you"
+  content: "  is Me "
 }, {
   id: 1,
   title: "Bahja",
@@ -68,13 +94,30 @@ app.post('/admin', function(request, response){
 })
 
 app.get('/guestbook', function(request, response){
+
+  const querry = "SELECT * FROM guestbooks ORDER BY id"
+db.all(querry, function(error, guestbook){
+  if(error){
+    console.log(error)
+    // send back.error page. 
+
+    const model = { 
+      dbError:true
+    }
+    
+  response.render('guestbook.hbs', model)
+
+  }else{
   const model = {
     guestbooks: guestbooks,
     isLoggedIn: true,
+    dbError: false
   }
-  response.render('guestbook.hbs', model)
-})
 
+  response.render('guestbook.hbs', model)
+}
+})
+})
 app.post('/guestbook', function(request, response){
   const content = request.body.content
   const title = request.body.title
@@ -84,7 +127,17 @@ app.post('/guestbook', function(request, response){
     content,
   }
   guestbooks.push(guestbook)
-  response.redirect('/guestbook')
+  const querry ="INSERT INTO guestbook( title, content) VALUES (?, ?)"
+  const values =[title, content]
+  db.run(querry, values, function(error){
+    if (error){
+      console.log(error)
+      // dispaly error.
+    }else{
+      response.redirect('/guestbook')
+    }
+  })
+ 
 })
 
 app.get('/updateguestbookposts/:id', function(request, response) {
@@ -97,7 +150,7 @@ app.get('/updateguestbookposts/:id', function(request, response) {
     isLoggedIn: true,
     title: "Update guestbook"
   }
-  response.render('updateguestbookposts.hbs', model)
+  response.render('updateguestbookposts.hbs',  model)
 })
 
 app.post('/updateguestbookposts/:id', function(request, response) {
@@ -169,10 +222,20 @@ app.get("/about", function(request, response){
   response.render("about.hbs")
 })
 app.get("/guestbook", function(request, response){
-  const model = {
+  const id = request.params.id
+  const query ="SELECT* FROM guestbook WHERE id =?"
+  const values = [id]
+  db.get(query, values, function(error, guestbook){
+   if(error){
+     console.log(error)
+     // display error 
+   }else{
+     const model = {
     isLoggedIn: true,
   }
   response.render("guestbook.hbs", model)
+   }
+  })
 })
 
 app.post('/deletepost/:id', function(request, response) {
