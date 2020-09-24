@@ -21,6 +21,9 @@
 
 <h1>Welcome to my guestbook page.</h1>
 <h2>Guestbook</h2>
+{{#if dbError}}
+  <p>the page can't display, try again later.</p>
+  {{else}}
 {{#if guestbooks.length}}
     {{#each guestbooks}}
     <div class="my-post">
@@ -40,3 +43,12 @@
 {{else}}
 <p>There is no guestbook posts</p>
 {{/if}}
+
+
+  {{/if}}
+
+
+
+
+
+
