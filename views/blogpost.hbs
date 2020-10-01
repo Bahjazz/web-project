@@ -1,0 +1,10 @@
+<p>Posts</p>
+{{#if blogpost}}
+  <div class="my-post">
+        <h3>#{{blogpost.id}} {{blogpost.title}}</h3>
+        <p>{{blogpost.content}}</p>
+             <form method="get" action="/blogpost">
+        <input type="submit" class="btn btn-success" value="return">
+      </form>   
+      {{/if}}
+    </div>

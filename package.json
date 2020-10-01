@@ -19,8 +19,11 @@
   "homepage": "https://github.com/Bahjazz/web-project#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-sqlite3": "^0.9.11",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "node.js": "0.0.1-security",
     "sqlite3": "^5.0.0"
   }
 }

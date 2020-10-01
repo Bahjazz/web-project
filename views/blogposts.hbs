@@ -1,16 +1,19 @@
 <h1>Welcome to my blog posts.</h1>
 <h2>Blogposts</h2>
-{{#if blogs.length}}
-    {{#each blogs}}
+{{#if dbError}}
+  <p>the page can't display, try again later.</p>
+  {{else}}
+{{#if blogposts.length}}
+    {{#each blogposts}}
     <div class="my-post">
-        <h3>#{{id}} {{title}}</h3>
+        <h3>#{{Id}} {{title}}</h3>
         <p>{{content}}</p>
-             <form method="post" action="">
-        <input type="submit" class="btn btn-success" value="Details">
+             <form method="get" action="/blogpost/{{Id}}">
+          <input type="submit" class="btn btn-success" value="Details">
       </form> 
         {{#if ../isLoggedIn}}
       <a href="/updateblogpost/{{id}}" class="btn btn-primary">Update</a>
-      <form method="post" action="/deletepost/{{id}}">
+      <form method="post" action="/deletepost/{{Id}}">
         <input type="submit" class="btn btn-primary" value="Delete post">  
       </form>   
       {{/if}}
@@ -18,4 +21,5 @@
     {{/each}}
 {{else}}
 <p>There is no blogpost</p>
+{{/if}}
 {{/if}}

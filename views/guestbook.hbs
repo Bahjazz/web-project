@@ -1,3 +1,4 @@
+
 <section id=guestook>
     <div class="guest-image">
         <img src="/images/sticky-note-681016.jpg" class="contact-image" alt="guestbook image">
@@ -18,14 +19,13 @@
     </div>
     </div>
 </section>
-
 <h1>Welcome to my guestbook page.</h1>
 <h2>Guestbook</h2>
 {{#if dbError}}
   <p>the page can't display, try again later.</p>
   {{else}}
-{{#if guestbooks.length}}
-    {{#each guestbooks}}
+{{#if guestbook.length}}
+    {{#each guestbook}}
     <div class="my-post">
         <h3>#{{id}} {{title}}</h3>
         <p>{{content}}</p>
@@ -34,7 +34,7 @@
       </form> 
         {{#if ../isLoggedIn}}
         <a href="/updateguestbookposts/{{id}}" class="btn btn-primary">Update</a>
-      <form method="post" action="/deletegpost/{{id}}">
+      <form method="post" action="/deleteguestpost/{{id}}">
         <input type="submit" class="btn btn-primary" value="Delete post">  
       </form>   
       {{/if}}
