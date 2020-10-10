@@ -1,0 +1,12 @@
+ <form method="post" action="/update-portfolio/{{portfolio.Id}}">
+        <h2>Post blog posts</h2>
+        <div class="contact-box">
+            name: <input type="text" name="name" required="required"  value="{{portfolio.name}}">
+        </div>
+        <div class="contact-box">
+            Content: <textarea name="content" required="required">{{portfolio.content}}</textarea>
+        </div>
+        <div class="contact-box">
+            <input type="submit" value="Post">
+        </div>
+    </form>

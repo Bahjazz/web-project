@@ -1,0 +1,10 @@
+
+{{#if portfolio}}
+<div class="my-post">
+    <h3>#{{portfolio.Id}} {{portfolio.name}}</h3>
+    <p>{{portfolio.content}}</p>
+    <form method="GET" action="/portfolio">
+    <input type="submit" class ="btn btn-success" value="return">
+    </form>
+  {{/if}}
+</div>

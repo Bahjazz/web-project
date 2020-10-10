@@ -22,21 +22,24 @@
                <li><a href="/contact">Contact</a></li>
                <li><a href="/blogposts">Blogposts</a></li>
                <li><a href="/guestbook">Guestbook</a></li>
+               <li><a href="/portfolio">Portfolio</a></li>
+
                {{#if isLoggedIn}}
                <li><a href="/admin">Admin</a></li>
+
                {{/if}}
            </ul>
        </nav>
    </div>
    </header>
-   <!--a ful image with some text on -->
   <main>
     {{{body}}}
 </main>
 
   
   <footer>
-  <a href="/login" class="btn btn-link">Login</a>
+    {{#unless isLoggedIn}}<a href="/login" class="btn btn-link">Login</a>{{/unless}}
+  {{#if isLoggedIn}}<a href="/logout" class="btn btn-link">Logout</a>{{/if}}
   <p>Bahja faqid, copyright &copy; 2020</p>
 
 </footer>

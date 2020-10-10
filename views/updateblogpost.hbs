@@ -1,10 +1,10 @@
- <form method="post" action="/updateblogpost/{{blog.id}}">
+ <form method="post" action="/updateblogpost/{{blogpost.Id}}">
         <h2>Post blog posts</h2>
         <div class="contact-box">
-            title: <input type="text" name="title" required="required" placeholder="Title" value="{{blog.title}}">
+            title: <input type="text" name="title" required="required" placeholder="Title" value="{{blogpost.title}}">
         </div>
         <div class="contact-box">
-            Content: <textarea name="content" required="required" placeholder="Content">{{blog.content}}</textarea>
+            Content: <textarea name="content" required="required" placeholder="Content">{{blogpost.content}}</textarea>
         </div>
         <div class="contact-box">
             <input type="submit" value="Post">
