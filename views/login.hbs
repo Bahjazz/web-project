@@ -12,6 +12,7 @@
 </form>
 <form class="login-box" action="/login" method="POST">
    <h1>Login</h1>
+   <input type="hidden" name="_csrf" value="{{csrfToken}}">
    <input type="text" name="username"placeholder="username">
    <input type="password" name="password"placeholder="password">
    <input type="submit" value="Login">

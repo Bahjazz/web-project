@@ -45,7 +45,7 @@ header li {
 }
 header #logo {
   float: left;
-  padding: 30px;
+  padding: 15px;
 }
 header #logo a {
   margin: 0;
@@ -55,11 +55,11 @@ header #logo h1 {
 }
 header nav {
   float: right;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 header a:hover {
   color: white;
-  font-weight: bolder;
 }
 /*background-info*/
 #background-info {
@@ -285,6 +285,7 @@ footer {
   text-align: center;
   font-size: 20px;
 }
+
 /*home*/
 @media (max-width: 768px) {
   header #logo,

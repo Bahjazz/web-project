@@ -1,29 +1,42 @@
 
   <div class="contact-form">
-        <form method="post" action="/portfolio">
+        <form method="post" action="/portfolio/portfolio">
             <h2>Projects</h2>
+            {{#if validationErrors.length}}
+            <p style="color: black;">couldn't create the projects becouse:</p>
+            <ul style="color: black;">
+              {{#each validationErrors}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
             <div class="contact-box">
-                <input type="text" name="name" required="required" placeholder="Name">
+              <input type="hidden" name="_csrf" value="{{csrfToken}}">
+              <input type="text" name="name"  placeholder="Name">
             </div>
             <div class="contact-box">
-                <textarea required="required" name="content" placeholder="Content" rows="3"></textarea>
+                <textarea  name="content" placeholder="Content" rows="3"></textarea>
             </div>
             <div class="contact-box">
                 <input type="submit" value="Post">
             </div>
         </form>
     </div>
+    {{#if dbErrorOccured}}
+ can't display the page now, try again later.
+ {{else}}
 {{#if portfolio.length}}
     {{#each portfolio}}
     <div class="my-post">
         <h3>#{{Id}} {{name}}</h3>
         <p>{{content}}</p>
-             <form method="get" action="/portfolios/{{Id}}">
+             <form method="get" action="/portfolio/portfolios/{{Id}}">
         <input type="submit" class="btn btn-success" value="Details">
       </form> 
         {{#if ../isLoggedIn}}
-      <a href="/update-portfolio/{{Id}}" class="btn btn-primary">Update</a>
-      <form method="post" action="/deleteportfoliopost/{{Id}}">
+      <a href="/portfolio/update-portfolio/{{Id}}" class="btn btn-primary">Update</a>
+      <form method="post" action="/portfolio/deleteportfoliopost/{{Id}}">
+        <input type="hidden" name="_csrf" value="{{../csrfToken}}">
         <input type="submit" class="btn btn-primary" value="Delete post">  
       </form>   
       {{/if}}
@@ -32,3 +45,4 @@
 {{else}}
 <p>There is no projects</p>
 {{/if}} 
+{{/if}}

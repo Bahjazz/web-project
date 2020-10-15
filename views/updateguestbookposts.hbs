@@ -1,6 +1,10 @@
- <form method="post" action="/updateguestbookposts/{{guestbook.Id}}">
+ {{#if dbError}}
+ can't display the page now, try again later.
+ {{else}}
+ <form method="post" action="/guestbook/updateguestbookposts/{{guestbook.Id}}">
         <h2>Post blog posts</h2>
         <div class="contact-box">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
             title: <input type="text" name="title" required="required"  value="{{guestbook.title}}">
         </div>
         <div class="contact-box">
@@ -10,3 +14,4 @@
             <input type="submit" value="Post">
         </div>
     </form>
+    {{/if}}

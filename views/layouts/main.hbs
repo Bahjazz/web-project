@@ -3,8 +3,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="/dist/layoutt.css">
+    <link rel="icon" href="/images/logo.jpeg" type ="image/x-icon">
 
-    <title>Hello</title>
+    <title>BF</title>
   </head>
   <body>
     
@@ -21,11 +22,11 @@
                <li><a href ="/about">About</a></li>
                <li><a href="/contact">Contact</a></li>
                <li><a href="/blogposts">Blogposts</a></li>
-               <li><a href="/guestbook">Guestbook</a></li>
-               <li><a href="/portfolio">Portfolio</a></li>
+               <li><a href="/guestbook">Guestbook Posts</a></li>
+               <li><a href="/portfolio">Software Projects</a></li>
 
                {{#if isLoggedIn}}
-               <li><a href="/admin">Admin</a></li>
+               <li><a href="/blogposts/admin">Admin</a></li>
 
                {{/if}}
            </ul>

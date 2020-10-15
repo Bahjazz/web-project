@@ -1,9 +1,15 @@
+<h1>posts</h1>
+{{#if dbErrorOccured}}
+ can't display the page now, try again later.
+ {{else}}
 {{#if guestbook}}
-<div class="my-post">
-    <h3>#{{guestbook.Id}} {{guestbook.title}}</h3>
+ <div class="my-post">
+   <h3>#{{guestbook.Id}} {{guestbook.title}}</h3>
     <p>{{guestbooks.content}}</p>
     <form method="GET" action="/guestbook">
     <input type="submit" class ="btn btn-success" value="return">
     </form>
   {{/if}}
 </div>
+{{/if}}
+

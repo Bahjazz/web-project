@@ -1,11 +1,20 @@
 <div class="contact-form">
-    <form method="post" action="/admin">
+    <form method="post" action="/blogposts/admin">
         <h2>Post blog posts</h2>
+        {{#if validationErrors.length}}
+        <p style="color: black;">couldnt create the blogpost becouse:</p>
+        <ul style="color: black">
+            {{#each validationErrors}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        {{/if}}
         <div class="contact-box">
-            title: <input type="text" name="title" required="required" placeholder="Title">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            title: <input type="text" name="title" placeholder="Title">
         </div>
         <div class="contact-box">
-            Content: <textarea name="content" required="required" placeholder="Content"></textarea>
+            Content: <textarea name="content"  placeholder="Content"></textarea>
         </div>
         <div class="contact-box">
             <input type="submit" value="Post">

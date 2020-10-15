@@ -1,6 +1,18 @@
- <form method="post" action="/updateblogpost/{{blogpost.Id}}">
+{{#if validationError}}
+<p>Couldn´t create guestbook because:</p>
+<ul>
+  {{#each}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+{{/if}}
+{{#if dbError}}
+ can't display the page now, try again later.
+ {{else}}
+ <form method="post" action="/blogposts/updateblogpost/{{blogpost.Id}}">
         <h2>Post blog posts</h2>
         <div class="contact-box">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
             title: <input type="text" name="title" required="required" placeholder="Title" value="{{blogpost.title}}">
         </div>
         <div class="contact-box">
@@ -10,3 +22,4 @@
             <input type="submit" value="Post">
         </div>
     </form>
+    {{/if}}

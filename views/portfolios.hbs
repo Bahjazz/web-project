@@ -1,4 +1,6 @@
-
+{{#if dbErrorOccured}}
+ can't display the page now, try again later.
+ {{else}}
 {{#if portfolio}}
 <div class="my-post">
     <h3>#{{portfolio.Id}} {{portfolio.name}}</h3>
@@ -8,3 +10,4 @@
     </form>
   {{/if}}
 </div>
+{{/if}}
