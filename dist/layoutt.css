@@ -160,7 +160,6 @@ header a:hover {
   background-position: center;
 }
 .Content-info .Cont-info {
-  text-align: center;
   max-width: 700px;
 }
 .Content-info .Cont-info h1 {
@@ -170,13 +169,12 @@ header a:hover {
 }
 .Con-container {
   display: flex;
-  justify-content: center;
   width: 100%;
-  align-items: center;
 }
 .contact-me-info {
   display: flex;
   flex-direction: column;
+  margin-bottom: 15%;
   width: 40%;
 }
 .contact-me-info.Con-box {
@@ -193,12 +191,13 @@ header a:hover {
   flex-direction: column;
 }
 .contact-me-info .Con-box .text h3 {
+  font-size: 30px;
   color: black;
   font-weight: 400;
 }
 .contact-me-info .Con-box .text p {
   color: black;
-  font-size: 17px;
+  font-size: 20px;
   padding-bottom: 30px;
 }
 .contact-form {
